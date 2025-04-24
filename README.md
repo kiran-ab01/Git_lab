@@ -107,3 +107,23 @@ three most well-known version control tools (also known as revision control syst
 ![image](https://github.com/user-attachments/assets/c5f3abc1-5724-4f53-ac44-14bc68aae22a)
 
 
+# Additional Tools Used for Code Review & Collaboration
+Snippets,Wikis,Web IDE.
+
+GitLab Projects are housed within Groups
+
+Groups can have any number of Subgroups
+
+![image](https://github.com/user-attachments/assets/2e95d0b1-236e-421f-b21c-016b7297d9df)
+
+# Gitlab projects and group visibilty
+
+1.private: For private projects only members of the project or group can: clone the project, users with guest can't clone the project and private groups can have only private subgroups/
+
+2.Internal: For internal any authenticated users including users with guest role can: clone the project, only internal memebers can view the intrnal content and external members can't clone the projects and private groups can have intrtnal and  private subgroups.
+
+3.Public: for public projects users with not authenticated and users with guest role can: clone the project and public group can have public,internal and private subgroups.
+
+
+
+
