@@ -124,6 +124,42 @@ Groups can have any number of Subgroups
 
 3.Public: for public projects users with not authenticated and users with guest role can: clone the project and public group can have public,internal and private subgroups.
 
+# GitLab CI/CD: Key Ingredients
+1 .gitlab-ci.yml -> It specified the stages, jobs, and actions that you want to perform. Think of the YAML file as the brains, and the runner as the body.
+
+2. install and configure a Gitlab Runner: a file written in Go, will run the jobs specified in the YAML file using an API to communicate with GitLab. 
+
+# .gitlab-ci.yml
+Global keywords: 
+1.Defult: 
+Each default keyword is copied to every job that doesn’t already have it defined. If the job already has a keyword defined, that default is not used.
+
+Supported values: after_script,artifacts,before_script,cache,hooks,id_tokens,image,interruptible,retry,services,tags.
+![image](https://github.com/user-attachments/assets/9d6ec6db-76a8-4084-b8b7-366c04339fc4)
+
+2. include:
+   Use include to include external YAML files in your CI/CD configuration. You can split one long .gitlab-ci.yml file into multiple files to increase readability.
+
+   Supported values:include:component,include:local,include:project,include:remote,include:template.include:inputs,include:rules,include:integrity.
+
+   a.include:component: 
+include:
+- component: $CI_SERVER_FQDN/my-org/security-components/secret-detection@1.0
+
+b.include:local:
+include:local to include a file that is in the same repository and branch as the configuration file containing the include keyword.
+include:
+  - local: '/templates/.gitlab-ci-template.yml'
+
+c. include:project:
+To include files from another private project on the same GitLab instance, use include:project and include:file
+
+include:
+  - project: 'my-group/my-project'
+    ref: main
+
+    
+
 
 
 
