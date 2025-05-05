@@ -157,6 +157,8 @@ To include files from another private project on the same GitLab instance, use i
 include:
   - project: 'my-group/my-project'
     ref: main
+    
+d.include:remote:
 
     
 
